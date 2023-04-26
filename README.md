@@ -1,3 +1,1 @@
-# terminados
-
-Estos son los proyectos terminados del cursus :)
+Estos son los proyectos aprobados del cursus :)

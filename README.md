@@ -4,7 +4,7 @@ Este repositorio contiene todos los proyectos aprobados del cursus. Cada proyect
 
 ## Contenido
 
-- [ft_printf](ft_printf/README.md)
+- [ft_printf]([ft_printf/README.md](https://github.com/Mankestark/Proyectos-terminados--cursus/tree/main/ft_printf))
 - [get_next_line](get_next_line/README.md)
 - [libft](libft/README.md)
 - [minitalk](minitalk/README.md)

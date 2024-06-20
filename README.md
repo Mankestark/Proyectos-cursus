@@ -31,8 +31,6 @@ Cada proyecto contiene su propio README con instrucciones detalladas sobre cómo
 
 ## Licencia
 
-Este repositorio no tiene una licencia específica. Contacta al autor para más detalles.
+Este proyecto está licenciado bajo la Licencia MIT. Para más detalles, revisa el archivo LICENSE en el repositorio.
 
 ---
-
-

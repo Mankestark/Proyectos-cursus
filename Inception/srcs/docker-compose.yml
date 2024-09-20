@@ -1,0 +1,68 @@
+services:
+  mariadb:
+    build:
+      context: ./requeriments/mariadb/
+    image: mariadb-mariza
+    container_name: mariadb
+    networks:
+      - mynet
+    restart: always 
+    env_file:
+      - .env
+    volumes:
+      - mariadb_vol:/var/lib/mysql 
+    expose:
+      - "3306"
+     
+  wordpress:
+    build: 
+      context: ./requeriments/wordpress
+    image: wordpress-mariza
+    container_name: wordpress
+    networks:
+      - mynet
+    restart: always
+    depends_on:
+      - mariadb
+    env_file:
+      - .env
+    volumes:
+      - wordpress_vol:/var/www/html
+  
+  nginx:
+    build: 
+      context: ./requeriments/nginx
+    image: nginx-mariza
+    container_name: nginx
+    networks:
+      - mynet
+    restart: always
+    depends_on:
+      - wordpress
+    env_file:
+      - .env
+    ports:
+      - "443:443"
+    volumes:
+      - wordpress_vol:/var/www/html
+
+networks:
+    mynet:
+      driver: bridge
+      name: mynet
+
+volumes:
+  mariadb_vol:
+    name: mariadb_vol
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: '/home/$USER/data/mariadb'
+  wordpress_vol:
+    name: wordpress_vol
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: '/home/$USER/data/wordpress'

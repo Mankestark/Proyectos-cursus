@@ -1,0 +1,23 @@
+events {}
+http {
+  include /etc/nginx/mime.types;
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    ssl_protocols TLSV1.2 TLSv1.3;
+    ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
+    ssl_certificate_key /etc/ssl/certs/nginx-selfsigned.key;
+    root /var/www/html;
+    server_name mariza.42.fr;
+    index index.php;
+    location /
+    {
+    try_files $uri $uri/ =404;
+    }
+    location ~ \.php$
+    {
+    include snippets/fastcgi-php.conf;
+    fastcgi_pass wordpress:9000;
+    }
+}
+}

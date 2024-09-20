@@ -25,6 +25,10 @@ Algoritmo para ordenar una lista de números con un conjunto limitado de operaci
 ### so_long
 Juego simple desarrollado en C utilizando la biblioteca gráfica MiniLibX.
 
+### Inception
+Configuración y despliegue de aplicaciones multi-contenedor utilizando Docker Compose, con una red personalizada para conectar contenedores y volúmenes persistentes. 
+El proyecto incluye la creación de imágenes personalizadas para servicios web y bases de datos, asegurando una gestión eficiente de entornos aislados.
+
 ## Cómo Usar
 
 Cada proyecto contiene su propio README con instrucciones detalladas sobre cómo compilar y ejecutar el código. Se recomienda revisar esos documentos para obtener más detalles específicos.
